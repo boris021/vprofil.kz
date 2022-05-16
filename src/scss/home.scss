@@ -105,11 +105,29 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+		flex-wrap: wrap;
 	}
 
 	&__body-item {
-		min-width: 550px;
+		// min-width: 550px;
+		flex: 0 1 550px;
 		border-radius: 5px;
+		margin-right: 50px;
+		margin-bottom: 30px;
+
+		&:last-child {
+			margin-right: 0;
+		}
+
+		@media (max-width: em(1182)) {
+			width: none;
+			display: flex;
+			flex-direction: column;
+			flex: 1 1 100%;
+			margin-right: 0;
+		}
+
+		@media (max-width:$tablet) {}
 	}
 }
 
@@ -131,6 +149,10 @@
 		z-index: 2;
 		padding: 36px 10px 36px 67px;
 
+		@media (max-width:$tablet) {
+			padding: 20px;
+		}
+
 		&>img {
 			content: '';
 			position: absolute;
@@ -138,6 +160,8 @@
 			height: 100%;
 			top: 0;
 			left: 0;
+			object-fit: cover;
+			border-radius: 5px 5px 0 0;
 		}
 	}
 
@@ -172,19 +196,192 @@
 		padding: 20px;
 	}
 
-	&__content-title {}
+	&__content-title {
+		font-weight: 600;
+		line-height: math.div(22, 18);
+		@include adaptiveValue("font-size", 18, 16);
+		margin-bottom: 15px;
+	}
 
-	&__content-list {}
+	&__content-list {
+		margin-left: 20px;
+		column-count: 2;
+		margin-bottom: 15px;
 
-	&__content-item {}
+		@media (max-width:$tablet) {
+			column-count: 1;
+		}
+	}
 
-	&__actions {}
+	&__content-item {
+		font-weight: 500;
+		font-size: 14px;
+		line-height: math.div(17, 14);
+		margin-bottom: 10px;
+		list-style-image: url(../img/check.svg);
+	}
 
-	&__actions-btn {}
+	&__actions {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		flex-wrap: wrap;
 
-	&__actions-phone {}
+		@media (max-width:$tablet) {}
+	}
 
-	&__actions-phone-text {}
+	&__actions-btn {
+		font-weight: 600;
+		line-height: math.div(18, 15);
+		text-align: center;
+		letter-spacing: 0.02em;
+		text-transform: uppercase;
+		color: #FFFFFF;
 
-	&__actions-phone-link {}
+		@media (max-width:$tablet) {
+			margin-bottom: 15px;
+		}
+	}
+
+	&__actions-phone {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		margin-right: 85px;
+	}
+
+	&__actions-phone-text {
+		display: block;
+		font-weight: 400;
+		font-size: 13px;
+		margin-bottom: 5px;
+
+		@media (max-width:$tablet) {
+			font-size: 12px;
+		}
+	}
+
+	&__actions-phone-link {
+		font-weight: 600;
+		line-height: math.div(20, 16);
+		letter-spacing: 0.02em;
+	}
+}
+
+//========================================================================================================================================================
+.form {
+	background: #F5F9FB;
+	@include adaptiveValue("padding-top", 50, 25);
+	@include adaptiveValue("padding-bottom", 50, 25);
+
+	&__body {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		position: relative;
+		max-width: 945px;
+		max-height: 366px;
+		margin: auto;
+		padding: 70px;
+		border-radius: 30px;
+
+		@media (max-width:$tablet) {
+			padding: 20px;
+		}
+
+		&::before {
+			content: '';
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			border-radius: 30px;
+			background: url(../img/form-bg.png) center center no-repeat;
+		}
+	}
+
+	&__left {
+		flex: 0 1 65%;
+		z-index: 2;
+		color: #fff;
+
+		@media (max-width:$tablet) {
+			flex: 1 1 100%;
+		}
+	}
+
+	&__left-title {
+		font-weight: 700;
+		@include adaptiveValue("font-size", 30, 20);
+		line-height: math.div(37, 30);
+		margin-bottom: 15px;
+	}
+
+	&__left-subtitle {
+		font-weight: 500;
+		@include adaptiveValue("font-size", 16, 14);
+		line-height: math.div(20, 16);
+		@include adaptiveValue("margin-bottom", 40, 15);
+
+		span {
+			color: $yellow;
+		}
+	}
+
+	&__left-text {
+		font-weight: 500;
+		@include adaptiveValue("font-size", 16, 14);
+		line-height: math.div(20, 16);
+		@include adaptiveValue("margin-bottom", 20, 15);
+	}
+
+	&__left-actions {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+	}
+
+	&__left-link {
+		margin-right: 20px;
+		background: #F0F0F0;
+		border-radius: 30px;
+		padding: 12px 20px;
+		font-weight: 400;
+		font-size: 14px;
+		color: $mainColor;
+		margin-bottom: 20px;
+
+		&:first-child {
+			background-color: #43d854;
+			color: #fff;
+		}
+
+		&:last-child {
+			margin-right: 0;
+			color: #fff;
+			background-color: #900020;
+		}
+
+		&::before {
+			display: inline-block;
+			margin-right: 8px;
+		}
+	}
+
+	&__right {
+		flex: 0 1 auto;
+		z-index: 2;
+		width: 244px;
+		height: 260px;
+
+		@media (max-width:$tablet) {
+			display: none;
+		}
+
+		img {
+			width: 100%;
+		}
+	}
 }
