@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/_head.htm',{
+"title":"Главная"
+})
+
+<body>
+	<div class="wrapper">
+		@@include('html/_header.htm',{})
+		<main class="page">
+
+			<section class="main">
+				<div class="main__container">
+					<div class="main__subtitle">Проектируем и устанавливаем под ключ</div>
+					<h1 class="main__title">Изготовление, монтаж водосточной системы в Алматы и области</h1>
+					<div class="main__text">Бесплатно рассчитаем проект, сделаем рабочую
+						документацию или просто подберем лучшую систему
+						под <strong>ваш запрос</strong></div>
+					<a href="https://api.whatsapp.com/send?phone=+77071717162"
+						class="main__btn button _icon-whatsapp">Рассчитать
+						стоиомость</a>
+				</div>
+				<img src="img/main-bg.png" alt="main" class="main__bg">
+			</section>
+
+		</main>
+		@@include('html/_footer.htm',{})
+	</div>
+	@@include('html/_popup.htm',{})
+	@@include('html/_js.htm',{})
+</body>
+
+</html>
