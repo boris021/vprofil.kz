@@ -37,25 +37,25 @@ function initSliders() {
 			modules: [Navigation],
 			observer: true,
 			observeParents: true,
-			slidesPerView: 1,
-			spaceBetween: 0,
-			autoHeight: true,
+			slidesPerView: 4,
+			spaceBetween: 30,
+			autoHeight: false,
 			speed: 800,
+			loop: true,
 
 			//touchRatio: 0,
 			//simulateTouch: false,
-			//loop: true,
 			//preloadImages: false,
 			//lazy: true,
 
-			/*
+
 			// Эффекты
 			effect: 'fade',
 			autoplay: {
 				delay: 3000,
 				disableOnInteraction: false,
 			},
-			*/
+
 
 			// Пагинация
 			/*
@@ -80,7 +80,7 @@ function initSliders() {
 			},
 
 			// Брейкпоинты
-			/*
+
 			breakpoints: {
 				320: {
 					slidesPerView: 1,
@@ -100,7 +100,7 @@ function initSliders() {
 					spaceBetween: 30,
 				},
 			},
-			*/
+
 			// События
 			on: {
 
